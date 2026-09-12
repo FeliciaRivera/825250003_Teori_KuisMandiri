@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Multi-Kolom - Jadwal Kuliah</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ============================================ -->
+    <!-- HEADER: Judul website                        -->
+    <!-- ============================================ -->
+    <header>
+        <h1>Website Multi-Kolom</h1>
+        <p>Jadwal Kuliah SI A 25</p>
+    </header>
+
+    <!-- ============================================ -->
+    <!-- NAVIGASI: Menu utama                         -->
+    <!-- ============================================ -->
+    <nav>
+        <div class="menu-container">
+            <a href="#" class="active">Home</a>
+        </div>
+    </nav>
+
+    <!-- ============================================ -->
+    <!-- MAIN: Container grid multi-kolom             -->
+    <!-- grid-template-columns: 2fr 1fr              -->
+    <!-- ============================================ -->
+    <main class="container">
+
+        <!-- ========================================== -->
+        <!-- CONTENT (Kiri - 2fr)                       -->
+        <!-- ========================================== -->
+        <section class="content">
+            <h2>Jadwal Mata Kuliah Semester Ganjil Tahun 2026/2027</h2>
+            <p>
+                Berikut adalah jadwal kuliah semester 3 Program Studi Sistem Informasi Kelas A angkatan 2025.
+            </p>
+
+            <!-- ====================================== -->
+            <!-- TABEL JADWAL                           -->
+            <!-- Struktur: thead + tbody + tfoot        -->
+            <!-- ====================================== -->
+            <div class="table-wrapper">
+                <table class="jadwal-table">
+
+                    <!-- ============================== -->
+                    <!-- THEAD: Bagian kepala tabel     -->
+                    <!-- ============================== -->
+                    <thead>
+                        <!-- Baris 1: Judul tabel (colspan=8) -->
+                        <tr>
+                            <th colspan="8">Jadwal Mata Kuliah Semester 3</th>
+                        </tr>
+                        <!-- Baris 2: Nama kolom -->
+                        <tr>
+                            <th>No</th>
+                            <th>Hari</th>
+                            <th>Kode</th>
+                            <th>Mata Kuliah (SKS)</th>
+                            <th>Kelas</th>
+                            <th>Dosen Pengajar</th>
+                            <th>Ruang</th>
+                            <th>Waktu</th>
+                        </tr>
+                    </thead>
+
+                    <!-- ============================== -->
+                    <!-- TBODY: Isi tabel               -->
+                    <!-- ============================== -->
+                    <tbody>
+
+                        <!-- Baris 1: Jumat -->
+                        <tr>
+                            <td>1</td>
+                            <td>Jumat</td>
+                            <td class="kode-mk">SI23028</td>
+                            <td class="mk">
+                                <span class="mk-sub">JARINGAN KOMPUTER DAN KOMPUTASI AWAN (4)</span>
+                            </td>
+                            <td>A</td>
+                            <td class="dosen">Rifky Kurniawan, S.Kom</td>
+                            <td>R0904</td>
+                            <td class="waktu">
+                                <span>Jumat</span>
+                                <span>(09:30 - 11:10)</span>
+                                <span class="waktu-divider"></span>
+                                <span>Jumat</span>
+                                <span>(07:30 - 09:10)</span>
+                            </td>
+                        </tr>
+
+                        <!-- Baris 2: Selasa - PBO (rowspan=2 untuk Hari) -->
+                        <tr>
+                            <td>2</td>
+                            <td rowspan="2">Selasa</td>
+                            <td class="kode-mk">SI23034</td>
+                            <td class="mk">
+                                <span class="mk-sub">PEMROGRAMAN BERBASIS OBJEK (4)</span>
+                            </td>
+                            <td>A</td>
+                            <td class="dosen">Lely Hiryanto, ST., M.Sc., Ph.D.</td>
+                            <td>R0905</td>
+                            <td class="waktu">
+                                <span>Selasa</span>
+                                <span>(13:30 - 15:10)</span>
+                                <span class="waktu-divider"></span>
+                                <span>Selasa</span>
+                                <span>(15:30 - 17:10)</span>
+                            </td>
+                        </tr>
+
+                        <!-- Baris 3: Selasa - PAP (lanjutan rowspan) -->
+                        <tr>
+                            <td>3</td>
+                            <!-- Hari tidak ditulis karena rowspan dari baris atas -->
+                            <td class="kode-mk">SI23035</td>
+                            <td class="mk">
+                                <span class="mk-sub">PEMROGRAMAN ANTARMUKA PENGGUNA (4)</span>
+                            </td>
+                            <td>A</td>
+                            <td class="dosen">Irvan Lewenusa, S.Kom., M.Kom.</td>
+                            <td>R1007</td>
+                            <td class="waktu">
+                                <span>Selasa</span>
+                                <span>(09:30 - 11:10)</span>
+                                <span class="waktu-divider"></span>
+                                <span>Selasa</span>
+                                <span>(07:30 - 09:10)</span>
+                            </td>
+                        </tr>
+
+                        <!-- Baris 4: Rabu -->
+                        <tr>
+                            <td>4</td>
+                            <td>Rabu</td>
+                            <td class="kode-mk">SI23037</td>
+                            <td class="mk">
+                                <span class="mk-sub">METODOLOGI PENELITIAN DAN ETIKA DIGITAL (4)</span>
+                            </td>
+                            <td>A</td>
+                            <td class="dosen">Tony, S.Kom., M.Kom., Ph.D.</td>
+                            <td>R0702</td>
+                            <td class="waktu">
+                                <span>Rabu</span>
+                                <span>(09:30 - 11:10)</span>
+                                <span class="waktu-divider"></span>
+                                <span>Rabu</span>
+                                <span>(11:30 - 13:10)</span>
+                            </td>
+                        </tr>
+
+                        <!-- Baris 5: Kamis -->
+                        <tr>
+                            <td>5</td>
+                            <td>Kamis</td>
+                            <td class="kode-mk">SI23040</td>
+                            <td class="mk">
+                                <span class="mk-sub">ANALISIS DAN PERANCANGAN SISTEM INFORMASI (4)</span>
+                            </td>
+                            <td>A</td>
+                            <td class="dosen">Ery Dewayani, Dra., M.M.S.I.</td>
+                            <td>R805</td>
+                            <td class="waktu">
+                                <span>Kamis</span>
+                                <span>(09:30 - 11:10)</span>
+                                <span class="waktu-divider"></span>
+                                <span>Kamis</span>
+                                <span>(07:30 - 09:10)</span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                    <!-- ============================== -->
+                    <!-- TFOOT: Footer tabel (colspan)  -->
+                    <!-- ============================== -->
+                    <tfoot>
+                        <tr>
+                            <td colspan="8">Total: 5 Mata Kuliah</td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SIDEBAR (Kanan - 1fr)                      -->
+        <!-- ========================================== -->
+        <aside class="sidebar">
+            <h3>Informasi</h3>
+            <br>
+
+            <div class="info-box">
+                <h4>Nama Universitas</h4>
+                <p>Universitas Tarumanagara</p>
+            </div>
+
+            <div class="info-box">
+                <h4>Semester</h4>
+                <p>Ganjil 2026/2027</p>
+            </div>
+
+            <div class="info-box">
+                <h4>Program Studi</h4>
+                <p>Sistem Informasi</p>
+            </div>
+
+            <div class="info-box">
+                <h4>Mahasiswa</h4>
+                <p>Felicia Rivera</p>
+                <p>NIM: 825250003</p>
+            </div>
+
+            <div class="info-box">
+                <h4>Kelas</h4>
+                <p>SI A</p>
+            </div>
+
+            <div class="info-box">
+                <h4>Total SKS</h4>
+                <p>20 SKS</p>
+            </div>
+
+            <div class="info-box">
+                <h4>Github</h4>
+                <a href="https://github.com/feliciarivera" target="_blank">Github Felicia Rivera</a>
+            </div>
+        </aside>
+
+    </main>
+
+    <!-- ============================================ -->
+    <!-- FOOTER: Copyright                            -->
+    <!-- ============================================ -->
+    <footer>
+        <p>&copy; 2026 - Felicia Rivera - 825250003 </p>
+    </footer>
+
+</body>
+</html>

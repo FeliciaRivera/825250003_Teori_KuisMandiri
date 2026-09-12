@@ -1,0 +1,455 @@
+/* ============================================================
+   RESET & GLOBAL
+   Penjelasan: Menghilangkan margin/padding default browser
+   dan mengatur font dasar untuk seluruh halaman.
+   ============================================================ */
+
+/* 1. RESET: hapus margin & padding semua elemen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. BODY: font, background, warna teks global */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+/* ============================================================
+   HEADER
+   Penjelasan: Bagian judul website di paling atas.
+   ============================================================ */
+
+/* 3. HEADER: background gelap, teks putih, rata tengah */
+header {
+    background-color: #0d1b2a;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.85;
+}
+
+
+/* ============================================================
+   NAVIGASI
+   Penjelasan: Menu navigasi yang menempel di atas (sticky)
+   saat halaman di-scroll.
+   ============================================================ */
+
+/* 4. NAV: sticky = menempel di atas saat scroll */
+nav {
+    background-color: #1b263b;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    gap: 5px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-weight: 500;
+}
+
+nav a:hover {
+    background-color: #415a77;
+}
+
+nav a.active {
+    background-color: #415a77;
+}
+
+
+/* ============================================================
+   MAIN CONTAINER - CSS GRID MULTI-KOLOM
+   Penjelasan: Grid 2 kolom → konten (2fr) + sidebar (1fr).
+   fr = fractional unit (pembagian proporsional).
+   ============================================================ */
+
+/* 5. CONTAINER: layout grid 2 kolom (2fr 1fr) */
+.container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;   /* konten 2 bagian, sidebar 1 bagian */
+    gap: 25px;                        /* jarak antar kolom */
+    max-width: 1400px;
+    margin: 30px auto;
+    padding: 0 20px;
+    align-items: start;
+}
+
+
+/* ============================================================
+   CONTENT (Kolom Kiri)
+   Penjelasan: Kotak putih berisi judul, deskripsi, dan tabel.
+   ============================================================ */
+
+/* 6. CONTENT: card putih dengan shadow */
+.content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.content h2 {
+    color: #0d1b2a;
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    border-bottom: 3px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+.content p {
+    color: #555;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+
+/* ============================================================
+   WRAPPER TABEL
+   Penjelasan: Pembungkus tabel supaya bisa di-scroll
+   horizontal kalau layar kecil (HP).
+   ============================================================ */
+
+/* 7. TABLE-WRAPPER: overflow-x auto untuk scroll horizontal */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+
+/* ============================================================
+   TABEL STYLING
+   Penjelasan:
+   - border-collapse: menyatukan garis antar sel (tidak dobel)
+   - padding: jarak isi sel ke tepi
+   - nth-child(even): zebra striping (baris genap beda warna)
+   - hover: highlight baris saat disorot mouse
+   ============================================================ */
+
+/* 8. TABEL UTAMA: border-collapse & font */
+.jadwal-table {
+    width: 100%;
+    border-collapse: collapse;      /* menyatukan garis antar sel */
+    margin-top: 10px;
+    font-size: 0.85rem;
+}
+
+/* 9. SEL & HEADER: border, padding, rata tengah */
+.jadwal-table th,
+.jadwal-table td {
+    border: 1px solid #d1d9e0;
+    padding: 12px 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* 10. HEADER TABEL (baris nama kolom): biru tua, teks putih */
+.jadwal-table thead tr:nth-child(2) th {
+    background-color: #4a6d8c;
+    color: white;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+/* 11. JUDUL TABEL (baris colspan): biru tua, lebih besar */
+.jadwal-table thead tr:first-child th {
+    background-color: #4a6d8c;
+    color: white;
+    font-size: 1.15rem;
+    padding: 18px;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #3a5670;
+    text-transform: none;
+}
+
+/* 12. ZEBRA STRIPING: baris genap warna abu muda */
+.jadwal-table tbody tr:nth-child(even) {
+    background-color: #f5f8fa;
+}
+
+/* 13. HOVER: highlight baris saat mouse di atasnya */
+.jadwal-table tbody tr:hover {
+    background-color: #e3eef6;
+    transition: background-color 0.3s;
+}
+
+/* 14. KOLOM NO: tebal, warna gelap */
+.jadwal-table tbody td:first-child {
+    font-weight: 600;
+    color: #0d1b2a;
+}
+
+/* 15. SEL HARI (yang pakai rowspan): background abu, TIDAK bold */
+.jadwal-table tbody td[rowspan] {
+    font-weight: 400;              /* tidak bold */
+    color: #0d1b2a;
+    vertical-align: middle;
+    background-color: #f0f4f8;
+    font-size: 0.9rem;
+}
+
+/* 16. KODE MATA KULIAH: warna merah */
+.jadwal-table td.kode-mk {
+    color: #c0392b;
+    font-weight: 700;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+/* 17. SEL MATA KULIAH: rata kiri */
+.jadwal-table td.mk {
+    text-align: left;
+    line-height: 1.4;
+    padding: 12px 10px;
+}
+
+.mk-sub {
+    display: block;
+    font-weight: 400;
+    color: #555;
+    font-size: 0.8rem;
+}
+
+/* 18. SEL DOSEN: rata kiri */
+.jadwal-table td.dosen {
+    text-align: left;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: #333;
+}
+
+/* 19. SEL WAKTU: 2 baris dalam 1 sel, ada garis pemisah */
+.jadwal-table td.waktu {
+    font-size: 0.78rem;
+    line-height: 1.4;
+    padding: 8px 6px;
+}
+
+.jadwal-table td.waktu span {
+    display: block;
+}
+
+/* 20. DIVIDER WAKTU: garis tipis pemisah antara 2 sesi */
+.waktu-divider {
+    display: block;
+    height: 1px;
+    background-color: #d1d9e0;
+    margin: 6px 0;
+}
+
+/* 21. FOOTER TABEL (tfoot): biru tua, teks putih */
+.jadwal-table tfoot td {
+    background-color: #4a6d8c;
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    padding: 14px;
+    letter-spacing: 0.5px;
+}
+
+
+/* ============================================================
+   SIDEBAR (Kolom Kanan)
+   Penjelasan: Kotak putih berisi info mahasiswa.
+   Menggunakan CSS Grid 1fr dari .container.
+   ============================================================ */
+
+/* 22. SIDEBAR: card putih */
+.sidebar {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    height: fit-content;
+}
+
+.sidebar h3 {
+    color: #0d1b2a;
+    font-size: 1.4rem;
+    margin-bottom: 18px;
+    border-bottom: 3px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+/* 23. INFO BOX: netral abu-abu, hover berubah lebih gelap */
+.info-box {
+    background-color: #f5f8fa;
+    padding: 18px 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.info-box:hover {
+    background-color: #ebf0f4;
+}
+
+.info-box h4 {
+    color: #4a6d8c;
+    font-size: 1rem;
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+.info-box p {
+    color: #555;
+    font-size: 0.95rem;
+    margin: 2px 0;
+}
+
+
+/* ============================================================
+   FOOTER
+   Penjelasan: Bagian copyright di paling bawah.
+   ============================================================ */
+
+/* 24. FOOTER: background gelap, teks putih */
+footer {
+    background-color: #0d1b2a;
+    color: white;
+    text-align: center;
+    padding: 22px 20px;
+    margin-top: 40px;
+}
+
+footer p {
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}
+
+
+/* ============================================================
+   RESPONSIVE (Media Query)
+   Penjelasan: Mengatur tampilan untuk layar kecil.
+   - < 992px: grid jadi 1 kolom (sidebar turun ke bawah)
+   - < 768px: header & nav lebih kecil
+   - < 480px: font lebih kecil lagi
+   ============================================================ */
+
+/* 25. RESPONSIVE: tablet */
+@media (max-width: 992px) {
+    .container {
+        grid-template-columns: 1fr;   /* jadi 1 kolom */
+        gap: 20px;
+    }
+
+    .jadwal-table {
+        font-size: 0.8rem;
+    }
+
+    .jadwal-table th,
+    .jadwal-table td {
+        padding: 10px 8px;
+    }
+
+    .table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .jadwal-table {
+        min-width: 850px;             /* biar tetap bisa dibaca, scroll horizontal */
+    }
+}
+
+/* 26. RESPONSIVE: HP */
+@media (max-width: 768px) {
+    header {
+        padding: 28px 15px;
+    }
+
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    header p {
+        font-size: 0.95rem;
+    }
+
+    .menu-container {
+        flex-wrap: wrap;
+        gap: 5px;
+        padding: 8px;
+    }
+
+    nav a {
+        font-size: 0.85rem;
+        padding: 8px 14px;
+    }
+
+    .container {
+        padding: 0 12px;
+        margin: 20px auto;
+    }
+
+    .content,
+    .sidebar {
+        padding: 20px;
+    }
+
+    .content h2 {
+        font-size: 1.3rem;
+    }
+}
+
+/* 27. RESPONSIVE: HP kecil */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.3rem;
+    }
+
+    nav a {
+        font-size: 0.75rem;
+        padding: 6px 10px;
+    }
+
+    .content,
+    .sidebar {
+        padding: 15px;
+    }
+
+    .sidebar h3 {
+        font-size: 1.2rem;
+    }
+
+    .info-box {
+        padding: 14px 16px;
+    }
+
+    .info-box h4 {
+        font-size: 0.9rem;
+    }
+
+    .info-box p {
+        font-size: 0.85rem;
+    }
+}
